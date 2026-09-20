@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sidiq Muhammad Qousim | Computer Engineer & Web Developer</title>
+<meta name="description" content="Portfolio of Sidiq Muhammad Qousim, a computer engineer and web developer building school systems, educational platforms and business websites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F8F5; --surface:#FFFFFF; --ink:#12211A; --muted:#4F6158; --line:#DCE3DD;
+  --brand:#0E6B48; --brand-ink:#FFFFFF; --accent:#F0B429; --soft:#E8F0EA;
+  --shadow:0 1px 2px rgba(18,33,26,.06), 0 12px 32px -12px rgba(18,33,26,.18);
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1512; --surface:#16211C; --ink:#EAF1EC; --muted:#A2B3A9; --line:#263630;
+    --brand:#3FBF8A; --brand-ink:#06170F; --soft:#1B2A23;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1512; --surface:#16211C; --ink:#EAF1EC; --muted:#A2B3A9; --line:#263630;
+  --brand:#3FBF8A; --brand-ink:#06170F; --soft:#1B2A23;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -12px rgba(0,0,0,.6);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:700}
+h3{font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+.lead{color:var(--muted);max-width:60ch}
+.section-head{margin-bottom:2.25rem;display:grid;gap:.75rem}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.brand{font-family:var(--display);font-weight:800;text-decoration:none;font-size:1.15rem;letter-spacing:-.02em;display:flex;align-items:center;gap:.6rem}
+.brand-mark{width:30px;height:30px;border-radius:9px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:.85rem;font-weight:800}
+.nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--muted);font-size:.95rem;font-weight:500;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav ul a:hover{color:var(--ink);border-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.35rem;border-radius:999px;font-weight:700;font-size:.98rem;text-decoration:none;border:2px solid var(--brand);background:var(--brand);color:var(--brand-ink);cursor:pointer;font-family:var(--body);transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--brand)}
+.btn.small{padding:.55rem 1rem;font-size:.9rem}
+@media (max-width:820px){.nav ul{display:none}}
+
+/* hero */
+.hero{padding-top:clamp(3rem,7vw,5.5rem);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.2rem);font-weight:800;max-width:15ch}
+.hero .who{font-weight:700;color:var(--brand);margin-bottom:1.1rem;font-size:1.05rem}
+.hero p.lead{margin-top:1.4rem;font-size:1.15rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.hero-meta{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;color:var(--muted);font-size:.95rem}
+.hero-meta span{display:inline-flex;align-items:center;gap:.45rem}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--brand);display:inline-block}
+.stack{position:relative;height:clamp(300px,42vw,430px)}
+.stack .frame{position:absolute;width:78%;box-shadow:var(--shadow)}
+.stack .frame:nth-child(1){top:0;right:0;transform:rotate(2.5deg);animation:rise .8s .05s both cubic-bezier(.2,.7,.2,1)}
+.stack .frame:nth-child(2){top:22%;left:0;transform:rotate(-2deg);animation:rise .8s .2s both cubic-bezier(.2,.7,.2,1)}
+.stack .frame:nth-child(3){bottom:0;right:4%;transform:rotate(1deg);animation:rise .8s .35s both cubic-bezier(.2,.7,.2,1)}
+@keyframes rise{from{opacity:0;translate:0 36px}to{opacity:1;translate:0 0}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.stack{height:340px;max-width:520px;margin-inline:auto;width:100%}}
+
+/* browser frame */
+.frame{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.frame-bar{display:flex;align-items:center;gap:.4rem;padding:.55rem .75rem;border-bottom:1px solid var(--line);background:var(--soft)}
+.frame-bar i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block;flex:none}
+.frame-bar i:first-child{background:#E4735F}.frame-bar i:nth-child(2){background:#F0B429}.frame-bar i:nth-child(3){background:#4FB983}
+.frame-url{margin-left:.5rem;flex:1;min-width:0;background:var(--surface);border-radius:999px;padding:.12rem .7rem;font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mock{aspect-ratio:16/10;position:relative;overflow:hidden;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px}
+.mock *{box-sizing:border-box}
+.ln{height:6px;border-radius:3px;background:currentColor;opacity:.25;margin:5px 0}
+
+/* mock: school */
+.m-school{display:grid;grid-template-columns:22% 1fr;background:#F4F7F5;color:#1a2b23}
+.m-school .sb{background:#0E6B48;padding:10px 8px;color:#fff}
+.m-school .sb .ln{opacity:.55;margin:9px 0}
+.m-school .sb .ln:first-child{opacity:1;background:#F0B429;width:60%}
+.m-school .main{padding:10px;display:grid;gap:8px;grid-template-rows:auto auto 1fr}
+.m-school .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.m-school .tile{background:#fff;border-radius:6px;padding:6px 7px;border:1px solid #dbe5df}
+.m-school .tile b{display:block;font-size:13px;font-family:var(--display)}
+.m-school .tile span{opacity:.6;font-size:8px}
+.m-school .chart{background:#fff;border:1px solid #dbe5df;border-radius:6px;display:flex;align-items:flex-end;gap:5px;padding:8px}
+.m-school .chart u{flex:1;background:#0E6B48;border-radius:3px 3px 0 0;display:block}
+.m-school .chart u:nth-child(even){background:#F0B429}
+
+/* mock: toyeen */
+.m-toy{background:#0B1F3A;color:#fff;display:grid;grid-template-rows:1fr auto;padding:12px;gap:8px}
+.m-toy .top{display:grid;grid-template-columns:1.2fr 1fr;gap:8px;align-items:center}
+.m-toy .big{font-family:var(--display);font-weight:800;font-size:16px;line-height:1.1}
+.m-toy .pill{display:inline-block;background:#FFC93C;color:#0B1F3A;font-weight:700;border-radius:99px;padding:3px 9px;margin-top:8px;font-size:9px;font-family:var(--body)}
+.m-toy svg{width:100%;height:auto;max-height:80px}
+.m-toy .row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.m-toy .row div{background:rgba(255,255,255,.09);border-radius:6px;height:34px;border:1px solid rgba(255,255,255,.12)}
+
+/* mock: html learner */
+.m-html{display:grid;grid-template-columns:1fr 1.15fr;background:#fff;color:#22302a}
+.m-html .lesson{padding:10px 12px}
+.m-html .lesson b{font-family:var(--display);font-size:12px;display:block;margin-bottom:6px}
+.m-html .lesson .ok{display:inline-block;margin-top:8px;background:#DDF3E7;color:#0E6B48;border-radius:99px;padding:2px 8px;font-size:9px;font-weight:700;font-family:var(--body)}
+.m-html .code{background:#12201A;color:#cfe8da;padding:10px 12px;line-height:1.7}
+.m-html .code em{font-style:normal;color:#F0B429}.m-html .code s{text-decoration:none;color:#7fd6ab}
+
+/* mock: irfc */
+.m-irfc{background:#EEF3FB;color:#14315e;padding:10px;display:grid;grid-template-rows:auto auto 1fr;gap:8px}
+.m-irfc .hd{display:flex;justify-content:space-between;align-items:center}
+.m-irfc .hd b{font-family:var(--display);font-size:12px}
+.m-irfc .hd span{display:flex;gap:5px}.m-irfc .hd span i{width:14px;height:5px;border-radius:3px;background:#14315e;opacity:.3;display:block}
+.m-irfc .hero-l{font-family:var(--display);font-weight:800;font-size:15px;line-height:1.1}
+.m-irfc .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.m-irfc .grid div{background:#fff;border-radius:6px;border:1px solid #d6e0f0;padding:6px;display:grid;align-content:space-between}
+.m-irfc .grid div::before{content:"";width:12px;height:12px;border-radius:4px;background:#2F6FDE;display:block}
+.m-irfc .grid div:nth-child(2)::before{background:#F0B429}.m-irfc .grid div:nth-child(3)::before{background:#0E6B48}
+
+/* mock: nocode */
+.m-nocode{background:#FAF7FF;color:#3a2a63;display:grid;grid-template-columns:28% 1fr}
+.m-nocode .pal{border-right:1px solid #e6dcf7;padding:8px;display:grid;gap:6px;align-content:start;background:#fff}
+.m-nocode .pal div{border:1px solid #e6dcf7;border-radius:5px;padding:5px;font-size:8px;text-align:center}
+.m-nocode .cv{padding:10px;display:grid;gap:7px;align-content:start}
+.m-nocode .blk{border-radius:6px;padding:8px;background:#fff;border:1px solid #e6dcf7}
+.m-nocode .blk.hl{background:#6C4DD8;color:#fff;border:none;font-family:var(--display);font-weight:700;font-size:12px}
+.m-nocode .drop{border:2px dashed #b9a5ee;border-radius:6px;height:34px;display:grid;place-items:center;font-size:8px;opacity:.8}
+
+/* mock: mahad */
+.m-mahad{background:#0B4A33;color:#fff;display:grid;grid-template-columns:1fr 1fr;align-items:end;padding:12px 12px 0;gap:10px}
+.m-mahad .tx{align-self:center}
+.m-mahad .tx b{font-family:var(--display);font-size:15px;line-height:1.1;display:block}
+.m-mahad .tx .ln{background:#F0B429;opacity:.9;width:50%;height:4px;margin:8px 0}
+.m-mahad .arch{background:linear-gradient(#F0B429,#e7a91f);border-radius:80px 80px 0 0;height:88%;position:relative;display:grid;align-items:end;justify-items:center}
+.m-mahad .arch::after{content:"";width:64%;height:78%;background:#0B4A33;border-radius:60px 60px 0 0;display:block}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about-grid p+p{margin-top:1.1rem}
+.about-text p{color:var(--muted)}
+.about-text p:first-child{color:var(--ink);font-size:1.2rem;line-height:1.55}
+.facts{display:grid;gap:1rem;align-content:start}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.25rem}
+.fact b{display:block;font-family:var(--display);font-size:1.1rem}
+.fact span{color:var(--muted);font-size:.97rem}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* what i do */
+.do-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.25rem}
+.do{border-top:3px solid var(--brand);padding-top:1rem}
+.do:nth-child(even){border-color:var(--accent)}
+.do h3{font-size:1.1rem;margin-bottom:.5rem}
+.do p{color:var(--muted);font-size:.98rem}
+
+/* skills */
+#skills{background:var(--soft)}
+.skill-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.skill-col{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.5rem}
+.skill-col h3{font-size:1.1rem;margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.chips li{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:.32rem .85rem;font-size:.92rem;font-weight:500}
+@media (max-width:900px){.skill-cols{grid-template-columns:1fr}}
+
+/* projects */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.card .frame{border:none;border-radius:0;border-bottom:1px solid var(--line)}
+.card-body{padding:1.4rem 1.5rem 1.6rem;display:grid;gap:.75rem;align-content:start;flex:1}
+.card-body .kind{color:var(--muted);font-size:.95rem;font-weight:500}
+.card-body p{color:var(--muted);font-size:.98rem}
+.card-foot{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-top:.5rem}
+.status{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:700;color:var(--brand);background:var(--soft);border-radius:999px;padding:.25rem .75rem}
+.status.progress{color:#8A5A00;background:rgba(240,180,41,.22)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .status.progress{color:#F5CB6B}}
+:root[data-theme="dark"] .status.progress{color:#F5CB6B}
+.proj-lead{display:grid;grid-template-columns:1.15fr 1fr;gap:0}
+.proj-lead .card-body{padding:2rem;align-content:center}
+.proj-lead .card-body h3{font-size:1.7rem}
+.proj-lead .card-body p{font-size:1.05rem}
+.proj-lead .frame{border-bottom:none;border-right:1px solid var(--line)}
+.proj-lead .frame{align-self:stretch;display:flex;flex-direction:column}
+.proj-lead .mock{flex:1;aspect-ratio:auto;min-height:260px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
+.more-title{margin-top:3rem;font-size:1.3rem}
+.more-title+.grid-3{margin-top:1.25rem}
+@media (max-width:900px){
+  .proj-lead{grid-template-columns:1fr}
+  .proj-lead .frame{border-right:none;border-bottom:1px solid var(--line)}
+  .proj-lead .mock{aspect-ratio:16/10;min-height:0;flex:none}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+}
+@media (min-width:901px) and (max-width:1060px){.grid-3{grid-template-columns:1fr 1fr}}
+
+/* experience */
+.role{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:1.75rem 0;border-top:1px solid var(--line)}
+.role:last-child{border-bottom:1px solid var(--line)}
+.role .when{color:var(--muted);font-weight:500}
+.role h3{margin-bottom:.25rem}
+.role .org{color:var(--brand);font-weight:700;margin-bottom:.9rem}
+.role ul{margin:1rem 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.5rem 1.5rem}
+.role li{position:relative;padding-left:1.3rem;color:var(--muted);font-size:.98rem}
+.role li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:2px;background:var(--accent)}
+@media (max-width:720px){.role{grid-template-columns:1fr;gap:.5rem}}
+
+/* certification & education */
+#credentials{background:var(--soft)}
+.cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.cred{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.5rem;display:grid;gap:.5rem;align-content:start}
+.cred .yr{font-weight:700;color:var(--brand);font-size:.95rem}
+.cred p{color:var(--muted);font-size:.97rem}
+@media (max-width:900px){.cred-grid{grid-template-columns:1fr}}
+
+/* why */
+.why{background:var(--brand);color:var(--brand-ink);border-radius:24px;padding:clamp(2rem,5vw,3.5rem);display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.why h2{color:inherit}
+.why p{opacity:.92}
+.why p+p{margin-top:1rem}
+@media (max-width:820px){.why{grid-template-columns:1fr}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.contact-list{display:grid;gap:.9rem}
+.c-item{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem 1.25rem}
+.c-item small{display:block;color:var(--muted);font-size:.85rem}
+.c-item b{font-weight:700;word-break:break-word}
+.c-item a.btn,.c-item button.btn{flex:none}
+.links{display:grid;gap:.4rem;margin-top:1.5rem}
+.links a{color:var(--brand);font-weight:500;text-underline-offset:3px;word-break:break-all}
+.contact-grid h3{margin-bottom:.75rem}
+@media (max-width:820px){.contact-grid{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:2rem 0 2.5rem;color:var(--muted);font-size:.93rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .stack .frame{animation:none!important}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Sidiq Muhammad Qousim, home"><span class="brand-mark" aria-hidden="true">SQ</span>Sidiq Qousim</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#credentials">Certification</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn small" href="#contact">Hire me</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" style="padding-bottom:clamp(3rem,6vw,5rem)">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="who">Sidiq Muhammad Qousim, Computer Engineer and Web Developer</p>
+      <h1>Websites and web apps that people can actually use.</h1>
+      <p class="lead">I build responsive websites, school management systems, educational platforms and custom digital solutions for schools, businesses and learners.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#projects">See my projects</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+      <div class="hero-meta">
+        <span><i class="dot"></i>Open to freelance work and roles</span>
+        <span>Ibadan, Nigeria</span>
+      </div>
+    </div>
+    <div class="stack" id="heroStack" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head"><h2>About me</h2></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a technology professional with hands-on experience in web development, website design, educational technology and web-based management systems.</p>
+        <p>My work spans personal projects, educational platforms, business websites and client solutions. I enjoy turning ideas and requirements into working digital products.</p>
+        <p>I keep growing through practical projects and continuous learning.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>Google certified</b><span>Artificial Intelligence and Web Development, 2022</span></div>
+        <div class="fact"><b>Studying Islamic Sharia Law</b><span>As-Safwah Online University, alongside my career in technology</span></div>
+        <div class="fact"><b>Based in Ibadan, Nigeria</b><span>Available for freelance projects, collaborations and technology roles</span></div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:4rem"><h2>What I do</h2></div>
+    <div class="do-grid">
+      <div class="do"><h3>Web development</h3><p>Responsive, functional websites for businesses, organisations, schools and personal projects.</p></div>
+      <div class="do"><h3>Web applications</h3><p>Web-based systems built to handle real processes, information and administrative work.</p></div>
+      <div class="do"><h3>Educational platforms</h3><p>Websites for tutorials, online learning and interactive educational content.</p></div>
+      <div class="do"><h3>UI/UX and responsive design</h3><p>Clean, accessible interfaces that work on desktop, tablet and mobile.</p></div>
+      <div class="do"><h3>Digital solutions</h3><p>Custom technology built around specific business, educational and organisational needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head"><h2>Skills</h2></div>
+    <div class="skill-cols">
+      <div class="skill-col">
+        <h3>Web development</h3>
+        <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>PHP</li><li>Firebase</li><li>Responsive web design</li></ul>
+      </div>
+      <div class="skill-col">
+        <h3>Development and tools</h3>
+        <ul class="chips"><li>Git and GitHub</li><li>Visual Studio Code</li><li>Web hosting and deployment</li><li>Database integration</li><li>Web application development</li></ul>
+      </div>
+      <div class="skill-col">
+        <h3>Other digital skills</h3>
+        <ul class="chips"><li>UI/UX design</li><li>Graphic design</li><li>Website management</li><li>Digital solutions</li><li>Technical troubleshooting</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Featured projects</h2>
+      <p class="lead">Live sites you can open right now, from a full school management system to client and educational websites.</p>
+    </div>
+
+    <!-- lead project -->
+    <article class="card proj-lead">
+      <div class="frame">
+        <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">rfc-ict.web.app</span></div>
+        <div class="mock m-school" id="mock-school" aria-hidden="true">
+          <div class="sb"><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div></div>
+          <div class="main">
+            <div class="ln" style="width:40%"></div>
+            <div class="tiles"><div class="tile"><b>1,240</b><span>Students</span></div><div class="tile"><b>68</b><span>Staff</span></div><div class="tile"><b>42</b><span>Classes</span></div></div>
+            <div class="chart"><u style="height:45%"></u><u style="height:70%"></u><u style="height:55%"></u><u style="height:88%"></u><u style="height:62%"></u><u style="height:76%"></u></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="status"><i class="dot"></i>Live</span>
+        <h3>School Management System</h3>
+        <span class="kind">Full school management web application</span>
+        <p>A web-based platform that supports school administration and academic activities through one centralised system. It shows my work on complex web applications, user interfaces and administrative workflows.</p>
+        <div class="card-foot"><a class="btn small" href="https://rfc-ict.web.app" target="_blank" rel="noopener">Visit live project</a></div>
+      </div>
+    </article>
+
+    <div class="grid-2">
+      <article class="card">
+        <div class="frame">
+          <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">toyeencresttech.com.ng</span></div>
+          <div class="mock m-toy" id="mock-toy" aria-hidden="true">
+            <div class="top">
+              <div><div class="big">Smart energy. Reliable power.</div><span class="pill">Get a quote</span></div>
+              <svg viewBox="0 0 80 80"><path d="M46 4 16 46h22l-6 30 32-44H42z" fill="#FFC93C"/></svg>
+            </div>
+            <div class="row"><div></div><div></div><div></div></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="status"><i class="dot"></i>Completed client project</span>
+          <h3>ToyeenCrestTech</h3>
+          <span class="kind">Client website for an electrical engineering and smart energy business</span>
+          <p>A professional online presence that presents the company's services and information in a clear, responsive interface.</p>
+          <div class="card-foot"><a class="btn small" href="https://www.toyeencresttech.com.ng" target="_blank" rel="noopener">Visit live website</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">html-learner-app.web.app</span></div>
+          <div class="mock m-html" id="mock-html" aria-hidden="true">
+            <div class="lesson"><b>Lesson: Headings</b><div class="ln"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:60%"></div><span class="ok">Run code</span></div>
+            <div class="code"><em>&lt;h1&gt;</em>Hello!<em>&lt;/h1&gt;</em><br><s>&lt;p&gt;</s>I am learning<br><s>&lt;/p&gt;</s><br><em>&lt;button&gt;</em>Play<em>&lt;/button&gt;</em></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="status"><i class="dot"></i>Live</span>
+          <h3>HTML Learner and HTML Game Platform</h3>
+          <span class="kind">Interactive HTML learning website</span>
+          <p>An educational platform that teaches HTML and web development through tutorials and interactive activities. It also includes HTML-based games that go beyond static websites.</p>
+          <div class="card-foot"><a class="btn small" href="https://html-learner-app.web.app" target="_blank" rel="noopener">Visit live project</a></div>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="more-title">More projects</h3>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame">
+          <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">irfc-ict.com.ng</span></div>
+          <div class="mock m-irfc" aria-hidden="true">
+            <div class="hd"><b>IRFC-ICT</b><span><i></i><i></i><i></i></span></div>
+            <div class="hero-l">Technology and digital services</div>
+            <div class="grid"><div><div class="ln"></div></div><div><div class="ln"></div></div><div><div class="ln"></div></div></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="status progress"><i class="dot" style="background:#C98A00"></i>Live prototype</span>
+          <h3>IRFC-ICT Website</h3>
+          <span class="kind">Business and technology services website</span>
+          <p>An online platform presenting IRFC-ICT's technology, digital, registration, training and professional services with responsive layouts.</p>
+          <div class="card-foot"><a class="btn small ghost" href="https://www.irfc-ict.com.ng" target="_blank" rel="noopener">Visit website</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">nocode.1web.web.app</span></div>
+          <div class="mock m-nocode" aria-hidden="true">
+            <div class="pal"><div>Text</div><div>Image</div><div>Button</div></div>
+            <div class="cv"><div class="blk hl">My first page</div><div class="blk"><div class="ln"></div><div class="ln" style="width:70%"></div></div><div class="drop">Drop a block here</div></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="status"><i class="dot"></i>Live</span>
+          <h3>No-Code Web Development Tutorial</h3>
+          <span class="kind">Educational web development platform</span>
+          <p>Teaches and demonstrates no-code web development, making web concepts easier for beginners through structured tutorials and practical resources.</p>
+          <div class="card-foot"><a class="btn small ghost" href="https://nocode.1web.web.app" target="_blank" rel="noopener">Visit live project</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">mahadulhudal-adabii.com.ng</span></div>
+          <div class="mock m-mahad" aria-hidden="true">
+            <div class="tx"><b>Mahadul-Hudal Al-Adabii</b><div class="ln"></div><div class="ln" style="background:#fff;opacity:.35;width:80%"></div></div>
+            <div class="arch"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="status progress"><i class="dot" style="background:#C98A00"></i>In progress</span>
+          <h3>Mahadul-Hudal Al-Adabii</h3>
+          <span class="kind">School website, UI/UX development</span>
+          <p>A professional digital presence for an educational institution, with attention to UI/UX, responsive design and school information structure.</p>
+          <div class="card-foot"><a class="btn small ghost" href="https://www.mahadulhudal-adabii.com.ng" target="_blank" rel="noopener">Visit development site</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><h2>Experience</h2></div>
+    <div class="role">
+      <div class="when">IRFC-ICT</div>
+      <div>
+        <h3>Web Developer and Digital Solutions Developer</h3>
+        <div class="org">IRFC-ICT</div>
+        <p class="lead">Practical experience developing websites, web applications, educational platforms, digital solutions and technology projects.</p>
+        <ul>
+          <li>Website development and deployment</li>
+          <li>Web application development</li>
+          <li>Educational technology</li>
+          <li>Business website development</li>
+          <li>UI/UX implementation</li>
+          <li>Website maintenance and improvements</li>
+          <li>Digital technology solutions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATION & EDUCATION -->
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head"><h2>Certification and education</h2></div>
+    <div class="cred-grid">
+      <div class="cred"><span class="yr">2022</span><h3>Google Certification</h3><p>Artificial Intelligence and Web Development. Training and certification covering both fields.</p></div>
+      <div class="cred"><span class="yr">Currently studying</span><h3>Islamic Sharia Law</h3><p>As-Safwah Online University</p></div>
+      <div class="cred"><span class="yr">Completed</span><h3>ND in Arabic</h3><p>Academic background in Arabic studies.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY + CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="why">
+      <div><h2>Why work with me?</h2></div>
+      <div>
+        <p>I take a practical, solution-focused approach. I start by understanding what a project is for, then build something that is functional, responsive, maintainable and useful to the people who will use it.</p>
+        <p>I am comfortable learning new technologies and adapting to different project needs.</p>
+      </div>
+    </div>
+
+    <div class="contact-grid" style="margin-top:4rem">
+      <div>
+        <h2 style="margin-bottom:1rem">Let's work together</h2>
+        <p class="lead">Have a website, web application, educational platform or digital project in mind? I am open to web development opportunities, freelance projects, collaborations and technology roles.</p>
+        <div class="links" aria-label="Portfolio project links">
+          <a href="https://rfc-ict.web.app" target="_blank" rel="noopener">School Management System</a>
+          <a href="https://www.toyeencresttech.com.ng" target="_blank" rel="noopener">ToyeenCrestTech</a>
+          <a href="https://html-learner-app.web.app" target="_blank" rel="noopener">HTML Learner and Games</a>
+          <a href="https://www.irfc-ict.com.ng" target="_blank" rel="noopener">IRFC-ICT</a>
+          <a href="https://nocode.1web.web.app" target="_blank" rel="noopener">No-Code Tutorial</a>
+          <a href="https://www.mahadulhudal-adabii.com.ng" target="_blank" rel="noopener">Mahadul-Hudal Al-Adabii</a>
+        </div>
+      </div>
+      <div class="contact-list">
+        <div class="c-item">
+          <div><small>Email</small><b>irfcict@gmail.com</b></div>
+          <a class="btn small" href="mailto:irfcict@gmail.com">Send email</a>
+        </div>
+        <div class="c-item">
+          <div><small>Phone and WhatsApp</small><b>+234 811 761 3997</b></div>
+          <a class="btn small" href="https://wa.me/2348117613997" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+        <div class="c-item">
+          <div><small>Location</small><b>Ibadan, Nigeria</b></div>
+          <button class="btn small ghost" type="button" id="copyEmail">Copy email</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; Sidiq Muhammad Qousim</span>
+    <span>Computer Engineer, Web Developer and Digital Solutions Developer</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Hero: reuse the first three project previews as a stack of browser frames
+  var stack = document.getElementById('heroStack');
+  var items = [
+    {id:'mock-school', url:'rfc-ict.web.app'},
+    {id:'mock-toy', url:'toyeencresttech.com.ng'},
+    {id:'mock-html', url:'html-learner-app.web.app'}
+  ];
+  try{
+    items.forEach(function(it){
+      var src = document.getElementById(it.id);
+      if(!src) return;
+      var frame = document.createElement('div');
+      frame.className = 'frame';
+      var bar = document.createElement('div');
+      bar.className = 'frame-bar';
+      bar.innerHTML = '<i></i><i></i><i></i>';
+      var url = document.createElement('span');
+      url.className = 'frame-url';
+      url.textContent = it.url;
+      bar.appendChild(url);
+      var clone = src.cloneNode(true);
+      clone.removeAttribute('id');
+      frame.appendChild(bar);
+      frame.appendChild(clone);
+      stack.appendChild(frame);
+    });
+  }catch(e){}
+
+  var btn = document.getElementById('copyEmail');
+  if(btn){
+    btn.addEventListener('click', function(){
+      var done = function(ok){
+        btn.textContent = ok ? 'Email copied' : 'irfcict@gmail.com';
+        setTimeout(function(){ btn.textContent = 'Copy email'; }, 2200);
+      };
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText('irfcict@gmail.com').then(function(){done(true)}, function(){done(false)});
+        }else{ done(false); }
+      }catch(e){ done(false); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
